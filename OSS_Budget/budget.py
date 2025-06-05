@@ -17,7 +17,10 @@ class Budget:
             return
         print("\n[지출 목록]")
         for idx, e in enumerate(self.expenses, 1):
-            print(f"{idx}. {e}")
+		line = f"{idx}. {e}"
+            	if idx % 5 == 0:
+                	line += "\n!Warning! {}번째 지출입니다".format(idx)
+            	print(line)
         print()
 
     def total_spent(self):
