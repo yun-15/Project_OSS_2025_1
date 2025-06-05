@@ -3,6 +3,8 @@ from budget import Budget
 
 def main():
     goal = int(input("가계부 목표 지출 횟수를 입력: "))
+    income = int(input("월 수익을 입력하세요: "))
+    limit_per = int(input("수익의 몇 %를 넘기면 경고할까요?: "))
     budget = Budget(goal)
 
     while True:
@@ -20,6 +22,9 @@ def main():
                 amount = int(input("금액(원): "))
             except ValueError:
                 print("잘못된 금액입니다.\n")
+                continue
+            if amount > budget.income:
+                print("지출 금액이 월 수익보다 클 수 없습니다.\n")
                 continue
             budget.add_expense(category, description, amount)
 
