@@ -2,7 +2,8 @@ from budget import Budget
 
 
 def main():
-    budget = Budget()
+    goal = int(input("가계부 목표 지출 횟수를 입력: "))
+    budget = Budget(goal)
 
     while True:
         print("==== 간단 가계부 ====")
